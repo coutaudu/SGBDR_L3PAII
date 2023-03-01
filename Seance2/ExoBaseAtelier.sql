@@ -1,4 +1,9 @@
--- Base De Donnée atelier
+-- !!! A REMPLIR !!!
+-- Nom prenom numero etu
+
+-- Exercice Base De Donnée "atelier"
+
+-- Créer une nouvelle base de données "atelier"
 
 -- L'atelier contient des machines
 -- Les machines ont un type: Tour/Fraiseuse/Robot
@@ -16,5 +21,16 @@
 
 
 -- Pensez à intégrer les contraintes utiles dans le schéma de la base de données
+
+-- Inspirez vous du script seance2/fabriqueBDD.sql
+-- SVP gardez la premiere ligne \c postgres pour me faciliter la vie.. merci ! :)
+
+-- Envoyer votre travail à ulysse.coutaud@gmail.com
+
+-- Le "compte-rendu" sera directement le fichier SQL (renommer en nom_atelier.sql)
+-- Remarque pas d'espace dans le nom du fichier !!!!!!!
+
+-- Mettez les commentaires nécessaires à la compréhension.
+
 
 
