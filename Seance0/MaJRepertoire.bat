@@ -4,7 +4,7 @@
 ::  https://github.com/coutaudu/SGBDR_L3PAII
 ::  **********************************************************
 @ECHO OFF
-SET fichierLogGit=%TEMP%/git_%RANDOM%.log
+SET fichierLogGit=/git.log
 
 ECHO:
 ECHO Mise … jour du dossier SGBDR_L3PAII.
