@@ -1,0 +1,115 @@
+
+* PostGres psql
+** Se connecter à la Base De Données (BDD) en ligne de commande
++ psql nom_bdd nom_utilisateur
+** Lister les BDD du serveur
++ \l
+** Lister les tables de la BDD courante
++ \dt
+** Obtenir les informations de la connection en cours
++ \conninfo
+** Se connecter à une autre BDD du serveur
+\c nom_bdd
+** Exécuter un fichier de commandes SQL
+\i fichier.sql   
+** Obtenir la liste des commandes disponibles
++ \?
+
+* Theme 1 commande SELECT
++ SELECT colonne1, colonne2 FROM table;
++ SELECT * FROM nom_table;
+
+* Theme 2 commande SELECT avec contraintes
++ SELECT colonne1, colonne2 FROM tableau WHERE condition1 AND/OR condition2;
++ Remarque: Opérateur NOT pour la negation
+** Opérateurs pour les nombres:
++ =, !=, < <=, >, >=
++ BETWEEN nombre1 AND nombre2
++ IN (nombre1, nombre2, nombre3)
+** Opérateurs pour le texte:
++ Sensible à la casse: =, != ou <> 
++ Non sensible à la casse: LIKE
++ Caractère joker: %
++ IN ("mot1", "mot2", "mot3")
+ 
+* Theme 3 Trier et filter les résultats
+** Clause DISTINCT:
++ SELECT DISTINCT colonne1 FROM table;
+** Clause ORDER BY:
++ SELECT colonne1 FROM table ORDER BY colonne1 ASC/DESC;
+** Clause LIMIT et OFFSET:
++ SELECT colonne1 FROM table LIMIT num_limit OFFSET num_offset;
+** MIN/MAX
+ + SELECT colonne1, MIN(colonne2) FROM TABLE;
+ 
+* Theme 4 Requêtes sur plusieurs tables avec (INNER) JOIN
+** INNER JOIN:
++ SELECT colonne1 FROM table1 INNER JOIN table2 ON table1.colonneX=table2.colonneY;
++ Remarque: Le INNER JOIN est le JOIN par defaut, le mot clé "INNER" n'est pas nécessaire.  
+** Cas d'ambiguité sur le nom de colonne:
++ SELECT table1.colonne1 AS nom1, table2.colonne1 AS nom2 FROM table1 INNER JOIN table2 ON table1.colonneX=table2.colonneY;
+
+* Theme 5 Left/Right/Full Join
+** LEFT JOIN
++ SELECT table1.colonneA, table2.colonneB FROM table1 LEFT JOIN table2 ON table1.colonneX=table2.colonneY
++ Il y aura forcément chacune des lignes de table1. Si aucune correspondance avec table2: NULL.
+** RIGHT JOIN
++ SELECT table1.colonneA, table2.colonneB FROM table1 RIGHT JOIN table2 ON table1.colonneX=table2.colonneY
++ Il y aura forcément chacune des lignes de table2. Si aucune correspondance avec table1: NULL.
+** FULL JOIN
++ SELECT table1.colonneA, table2.colonneB FROM table1 FULL JOIN table2 ON table1.colonneX=table2.colonneY
++ Il y aura forcément chacune des lignes de table1 et chacune des linges de table2. Si aucune correspondance: NULL.
+** Valeur NULL
++ Valeur spéciale: "case vide".
++ Se filtre avec: WHERE colonne IS NULL  
+** CROSS JOIN
+** NATURAL JOIN   
+  
+* Thème 6 Les expressions dans les requêtes et les aggrégats
+** Expressions
++ SELECT colonne1, colonne2  * 10 AS colonne2_pourcent FROM table;
++ SELECT colonne1, colonne2 FROM table WHERE colonne2 * 10 > 80;
++ De nombreuses fonctions disponibles selon le type de données et le SGBDR. Voir [[https://sql.sh/fonctions]]   
+** Aggrégats
++ SELECT COUNT(colonne1) from table;
++ Fonctions d'aggrégats: COUNT, MIN, MAX, AVG, SUM.
+** GROUP BY
++ Applique la fonction d'aggrégat à des groupes de données.
++ SELECT colonne1, SUM(colonne2) FROM table GROUP BY colonne1;
+** Clause HAVING
++ Equivalent de WHERE pour les expressions.
++ SELECT colonne1, AVG(colonne2) FROM table GROUP BY colonne1 HAVING AVG(colonne2) > 10     
+
+* Creation de table
+CREATE TABLE IF NOT EXISTS ma_table (
+    colonne1 type_de_données contraintes DEFAULT valeur_par_defaut,
+    colonne2 type_de_données contraintes DEFAULT valeur_par_defaut
+);
+
+** Types de données
++ BOOLEAN
++ INTEGER
++ FLOAT, DOUBLE, REAL
++ CHARACTER(num_chars), VARCHAR(num_chars), TEXT
++ DATE, DATETIME
++ BLOB
+
+** Contraintes sur les données
++ PRIMARY KEY
++ UNIQUE
++ NOT NULL
++ CHECK (expression)
++ FOREIGN KEY
+      
+* Insertion/modification/suppression de données
+** INSERT  
++ INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...)
++ INSERT INTO table (nom_colonne_1, nom_colonne_2, ...) VALUES ('valeur 1', 'valeur 2', ...)
+** UPDATE
+UPDATE table SET colonne_1 = 'valeur 1', colonne_2 = 'valeur 2', ... WHERE conditions;
+** DELETE
++ DELETE FROM table WHERE conditions;
+
+  
+
+
