@@ -4,10 +4,10 @@
 ::  https://github.com/coutaudu/SGBDR_L3PAII
 ::  **********************************************************
 @ECHO OFF
-SET fichierLogGit=/git.log
+SET fichierLogGit=git.log
 
 ECHO:
-ECHO Mise … jour du dossier SGBDR_L3PAII.
+ECHO Mise à jour du dossier SGBDR_L3PAII.
 ECHO:
 
 git reset --hard  > %fichierLogGit%
