@@ -4,8 +4,7 @@
 ::  https://github.com/coutaudu/SGBDR_L3PAII
 ::  **********************************************************
 @ECHO OFF
-SET fichierLogGit = %TEMP%/git_%RANDOM%.log
-
+SET fichierLogGit=%TEMP%/git_%RANDOM%.log
 
 ECHO:
 ECHO Mise … jour du dossier SGBDR_L3PAII.
@@ -18,7 +17,8 @@ IF %errorlevel% NEQ 0 (
    PAUSE
    EXIT
 )
-DEL %fichierLogGit% > nul
+
+DEL %fichierLogGit% >nul
 
 git pull > %fichierLogGit%
 
@@ -28,3 +28,7 @@ IF %errorlevel% NEQ 0 (
    PAUSE
    EXIT
 )
+DEL %fichierLogGit% >nul
+
+ECHO Le r‚pertoire a ‚t‚ synchronis‚.
+PAUSE
