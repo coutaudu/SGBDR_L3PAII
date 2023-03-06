@@ -23,7 +23,7 @@ CREATE TABLE employes (
     adresse			TEXT,
 	email			TEXT,
     service			TEXT,
-	CONSTRAINT service_existant FOREIGN KEY (service) REFERENCES horaires(service),
+	CONSTRAINT service_existant FOREIGN KEY (service) REFERENCES horaires(service) DEFERRABLE,
 	CONSTRAINT cle_primaire_employes PRIMARY KEY (prenom),
 	CONSTRAINT email_format CHECK (email LIKE '%@%'),
 	CONSTRAINT email_unique UNIQUE (email)
@@ -32,8 +32,8 @@ CREATE TABLE employes (
 CREATE TABLE chefs (
 	prenom			TEXT,
 	service			TEXT PRIMARY KEY,
-	CONSTRAINT service_existant FOREIGN KEY (service) REFERENCES horaires(service),
-	CONSTRAINT employe_existant FOREIGN KEY (prenom) REFERENCES employes(prenom)
+	CONSTRAINT service_existant FOREIGN KEY (service) REFERENCES horaires(service) DEFERRABLE,
+	CONSTRAINT employe_existant FOREIGN KEY (prenom) REFERENCES employes(prenom) DEFERRABLE
 	);
 
 INSERT INTO horaires VALUES ('Production',5,13);
@@ -53,6 +53,6 @@ INSERT INTO chefs VALUES ('Peter', 'Stock');
 INSERT INTO chefs VALUES ('John', 'Production');
 INSERT INTO chefs VALUES ('Mary', 'Maintenance');
 
-ALTER TABLE horaires ADD CONSTRAINT service_a_chef FOREIGN KEY (service) REFERENCES chefs(service);
+ALTER TABLE horaires ADD CONSTRAINT service_a_chef FOREIGN KEY (service) REFERENCES chefs(service) DEFERRABLE;
 
 
