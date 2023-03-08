@@ -2,11 +2,7 @@
 
 DROP DATABASE IF EXISTS "fabrique";
 
-CREATE DATABASE "fabrique" WITH
-    OWNER = postgres
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+CREATE DATABASE "fabrique" ;
 	
 \c fabrique
 	

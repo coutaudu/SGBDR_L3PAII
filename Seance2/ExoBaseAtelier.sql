@@ -1,5 +1,5 @@
 -- !!! A REMPLIR !!!
--- Nom prenom numero etu
+-- Nom prenom numero etu email
 
 -- Exercice Base De Donnée "atelier"
 
@@ -32,5 +32,9 @@
 
 -- Mettez les commentaires nécessaires à la compréhension.
 
+
+-- Preparer un script de requêtes SQL pour afficher:
+-- Le prenom des employes avec les machines auxquelles ils sont formés.
+-- La liste des employes qui sont formé à travailler sur un robot.
 
 
