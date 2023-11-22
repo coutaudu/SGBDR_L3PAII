@@ -95,9 +95,9 @@ EXIT /B %ERRORLEVEL%
 :ajoutePostgresBinSystemPathScript
     SET "ScriptAjoutSystemPath=%temp%\ScriptAjoutSystemPath_%RANDOM%.bat"
 	ECHO @ECHO OFF > "%ScriptAjoutSystemPath%"
-	ECHO SET value=%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%\bin >> "%ScriptAjoutSystemPath%";%%path%%
+	ECHO SET value=%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%\bin\ >> "%ScriptAjoutSystemPath%";%%path%%
 	ECHO reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /d "%%value%%" /f  >> "%ScriptAjoutSystemPath%"
-	ECHO shutdown /r -t 60
+	ECHO shutdown /r -t 60 >> "%ScriptAjoutSystemPath%"
 	ECHO EXIT >> "%ScriptAjoutSystemPath%"
 	CALL:runWithElevatedPrivileges %ScriptAjoutSystemPath%
 	PAUSE

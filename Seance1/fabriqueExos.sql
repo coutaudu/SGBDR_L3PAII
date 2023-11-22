@@ -45,32 +45,5 @@
 -- Afficher le salaire moyen par adresse.
 -- Afficher le salaire moyen des groupes d'employés dont le salaire moyen du service est supérieur à 120
 
-------------------------------------------------------------------------------------
--- Pour la prochaine séance:
--- Preparer les requetes pour extraire les données:
--- [1] Afficher les prénoms et les salaires des employés du service Maintenance.
--- [2] Afficher le salaire le plus élevé du service production.
--- [3] Afficher le salaire le plus élevé de l'entreprise
--- [4] Afficher les prénoms des employés qui ne sont pas au service Production.
--- [5] Afficher le salaire moyen par service.
---
--- Envoyer par mail à coutaudu@gmail.com
--- Objet du mail: [L3PAII2324] Seance_1 NomDeFamille
--- Fichier en pièce jointe: L3PAII2324_Seance1_Prenom_NomDeFamille_NumeroEtudiant.sql
-------------------------------------------------------------------------------------
 
--- [10] Insérer: Clause INSERT INTO
--- Ajouter un nouvel employé dans le service "Production"
--- Ajouter un service "Production Après-Midi" dont les horaires seront 13h-20h.
--- Ajouter les horaires 16h-5h pour le service "Astreinte"
--- Ajouter un nouvel employé "John" au service "Production Après-Midi". Que ce passe il ? 
 
--- [11] Modifier: Clause UPDATE
--- Augmenter le salaire des employes de "Astreinte" de 30%
--- L'employé Tom change de service et passe à l'après midi 
--- Supprimer le service de production après-midi.
-
--- [12] Supprimer: Clause DELETE FROM 
--- Augmenter le salaire des employes de "Astreinte" de 30%
--- L'employé Tom change de service et passe à l'après midi 
--- Supprimer le service de production après-midi.
