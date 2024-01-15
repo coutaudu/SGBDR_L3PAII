@@ -1,6 +1,12 @@
 -- Introduction aux Bases de Données 
 -- L3P AII
 
+
+-- Afficher le prenom de chaque employes avec ses horaires debut et fin
+-- Afficher le prenom de chaque chef de service avec le nom du service
+
+
+
 -- Faire les requetes pour obtenir: 
 
 
