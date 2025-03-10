@@ -5,7 +5,7 @@
 -- Afficher les prénoms et salaires des employés.
 -- Afficher toutes les informations des employés.
 
--- [2] Clause SELECT avec contraintes
+-- [2] Clause SELECT avec filtres
 -- Afficher les prénoms des employés du service production.
 -- Afficher les prénoms des employés qui gagne 110 ou moins.
 -- Afficher les prénoms des employés dont l'adresse contient la chaine "an".
@@ -34,7 +34,7 @@
 -- [8] Les expressions
 -- Les salaires de la base sont journaliers. Afficher les prénoms et salaires mensuels (20 jours travaillés).
 
--- [9] Les aggrégats: les fonctons d'aggrégats
+-- [9] Les aggrégats: les fonctions d'aggrégats
 -- Afficher le nombre d'employés.
 -- Afficher le salaire minimal.
 -- Afficher le salaire moyen.

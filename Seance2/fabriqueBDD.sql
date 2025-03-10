@@ -29,17 +29,11 @@ CREATE TABLE employes (
     adresse			TEXT,
 	email			TEXT,
     service_id			INTEGER,
-	CONSTRAINT cle_primaire_employes PRIMARY KEY (id),
-	CONSTRAINT service_existant FOREIGN KEY (service_id) REFERENCES services(id),
-	CONSTRAINT email_format CHECK (email LIKE '%@%'),
-	CONSTRAINT email_unique UNIQUE (email)
 );
 
 CREATE TABLE chefs (
 	service_id			INTEGER PRIMARY KEY,
 	employe_id			INTEGER,
-	CONSTRAINT service_existant FOREIGN KEY (service_id) REFERENCES services(id) DEFERRABLE,
-	CONSTRAINT employe_existant FOREIGN KEY (employe_id) REFERENCES employes(id) DEFERRABLE
 	);
 
 
