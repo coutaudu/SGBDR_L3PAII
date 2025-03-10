@@ -18,7 +18,7 @@ SET CHEMIN_INSTALL_NPP=C:\Program Files\Notepad++\
 SET CHEMIN_INSTALL_GIT=C:\Program Files\Git
 
 IF NOT EXIST "%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
+   ECHO 	Le râ€špertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
    ECHO     Installe PostgreSQL
    ECHO 	https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
    ECHO     Puis relance le script d'installation.
@@ -36,11 +36,11 @@ IF %errorlevel% NEQ 0 (
    EXIT
 )
 
-ECHO PostgreSQL est install‚.
+ECHO PostgreSQL est installâ€š.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_NPP% n'existe pas.
+   ECHO 	Le râ€špertoire %CHEMIN_INSTALL_NPP% n'existe pas.
    ECHO     Installe Notepad++
    ECHO 	https://notepad-plus-plus.org/downloads
    ECHO     Puis relance le script d'installation.
@@ -48,11 +48,11 @@ IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
    EXIT
 )
 
-ECHO Notepad++ est install‚.
+ECHO Notepad++ est installâ€š.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
+   ECHO 	Le râ€špertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
    ECHO     Installe Notepad++
    ECHO 	https://gitforwindows.org/
    ECHO     Puis relance le script d'installation.
@@ -60,7 +60,7 @@ IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
    EXIT
 )
 
-ECHO GIT est install‚.
+ECHO GIT est installâ€š.
 
 
 IF EXIST "%HOMEPATH%\Documents\SGBDR_L3PAII" (
@@ -79,11 +79,11 @@ IF %errorlevel% NEQ 0 (
 
 psql --help  >nul 2>nul
 IF %errorlevel% NEQ 0 (
-	ECHO Ajout des ex‚cutables PostgreSQL au PATH systŠme.
-	ECHO ATTENTION le poste va ˆtre red‚marr‚ !
+	ECHO Ajout des exâ€šcutables PostgreSQL au PATH systÅ me.
+	ECHO ATTENTION le poste va Ë†tre redâ€šmarrâ€š !
 	CALL:ajoutePostgresBinSystemPathScript
 ) ELSE (
-	ECHO Le PATH est … jour.
+	ECHO Le PATH est â€¦ jour.
 )
 
 
@@ -95,7 +95,7 @@ EXIT /B %ERRORLEVEL%
 :ajoutePostgresBinSystemPathScript
     SET "ScriptAjoutSystemPath=%temp%\ScriptAjoutSystemPath_%RANDOM%.bat"
 	ECHO @ECHO OFF > "%ScriptAjoutSystemPath%"
-	ECHO SET value=%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%\bin\ >> "%ScriptAjoutSystemPath%";%%path%%
+	ECHO SET value=%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%\bin\>> "%ScriptAjoutSystemPath%";%%path%%
 	ECHO reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_EXPAND_SZ /d "%%value%%" /f  >> "%ScriptAjoutSystemPath%"
 	ECHO shutdown /r -t 60 >> "%ScriptAjoutSystemPath%"
 	ECHO EXIT >> "%ScriptAjoutSystemPath%"
