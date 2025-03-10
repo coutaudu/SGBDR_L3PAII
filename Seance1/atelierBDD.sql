@@ -1,12 +1,12 @@
-DROP DATABASE IF EXISTS "fabrique";
+DROP DATABASE IF EXISTS "atelier";
 
-CREATE DATABASE "fabrique" WITH
+CREATE DATABASE "atelier" WITH
     OWNER = postgres
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 	
-\c fabrique
+\c atelier
 	
 
 CREATE TABLE employes (
