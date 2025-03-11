@@ -1,5 +1,9 @@
 # CoursSGBDR
 Cours d'introduction aux Systèmes de Gestion de Bases de Données Relationnelles pour L3 Pro AII UCBL1.
+- https://github.com/coutaudu/SGBDR_L3PAII/blob/main/Seance0/DownloadEnvironmentSoftwares.bat
+- https://github.com/coutaudu/SGBDR_L3PAII/blob/main/Seance0/InstallerEnvironnement.bat
+
+
 
 ## Ressources:
 - https://librecours.net/module/bdd0/intro-sgbd/index.xhtml (Stéphane Crozat http://stph.crzt.fr) 

@@ -4,23 +4,22 @@
 ::  https://github.com/coutaudu/SGBDR_L3PAII
 ::  **********************************************************
 @ECHO OFF
-
+chcp 1252
 ECHO:
 ECHO Installation de l'environnement PostgreSQL.
 ECHO:
 
 SET CHEMIN_INSTALL_POSTGRES=C:\Program Files\PostgreSQL\
-SET VERSION_POSTGRES=15
+SET VERSION_POSTGRES=17
 SET NOM_SERVICE=postgresql-x64-%VERSION_POSTGRES%
-
 SET CHEMIN_INSTALL_NPP=C:\Program Files\Notepad++\
-
-SET CHEMIN_INSTALL_GIT=C:\Program Files\Git
+SET CHEMIN_INSTALL_GIT=C:\Program Files\Git\
 
 IF NOT EXIST "%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
+   ECHO 	Le répertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
    ECHO     Installe PostgreSQL
    ECHO 	https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+   ECHO		curl https://get.enterprisedb.com/postgresql/postgresql-17.4-1-windows-x64.exe -o postgresql-17.4-1-windows-x64.exe
    ECHO     Puis relance le script d'installation.
    PAUSE
    EXIT
@@ -31,36 +30,39 @@ IF %errorlevel% NEQ 0 (
    ECHO 	Le service postgresql-x64-%VERSION_POSTGRES% n'existe pas.
    ECHO     Installe PostgreSQL.
    ECHO 	https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+   ECHO		curl https://get.enterprisedb.com/postgresql/postgresql-17.4-1-windows-x64.exe -o postgresql-17.4-1-windows-x64.exe
    ECHO     Puis relance le script d'installation.
    PAUSE
    EXIT
 )
 
-ECHO PostgreSQL est install‚.
+ECHO PostgreSQL est installé.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_NPP% n'existe pas.
-   ECHO     Installe Notepad++
+   ECHO 	Le répertoire %CHEMIN_INSTALL_NPP% n'existe pas.
+   ECHO     Installe Notepad++  et relance le script.
    ECHO 	https://notepad-plus-plus.org/downloads
+   ECHO		curl https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.7.8/npp.8.7.8.Installer.x64.exe -o  npp.8.7.8.Installer.x64.exe
    ECHO     Puis relance le script d'installation.
    PAUSE
    EXIT
 )
 
-ECHO Notepad++ est install‚.
+ECHO Notepad++ est installé.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
-   ECHO 	Le r‚pertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
-   ECHO     Installe Notepad++
+   ECHO 	Le répertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
+   ECHO     Installe Git et relance le script.
    ECHO 	https://gitforwindows.org/
+   ECHO		curl https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe -o Git-2.48.1-64-bit.exe
    ECHO     Puis relance le script d'installation.
    PAUSE
    EXIT
 )
 
-ECHO GIT est install‚.
+ECHO GIT est installé.
 
 
 IF EXIST "%HOMEPATH%\Documents\SGBDR_L3PAII" (
@@ -79,11 +81,11 @@ IF %errorlevel% NEQ 0 (
 
 psql --help  >nul 2>nul
 IF %errorlevel% NEQ 0 (
-	ECHO Ajout des ex‚cutables PostgreSQL au PATH systŠme.
-	ECHO ATTENTION le poste va ˆtre red‚marr‚ !
+	ECHO Ajout des exécutables PostgreSQL au PATH système.
+	ECHO ATTENTION le poste va Êre redémarré !
 	CALL:ajoutePostgresBinSystemPathScript
 ) ELSE (
-	ECHO Le PATH est … jour.
+	ECHO Le PATH est à jour.
 )
 
 
