@@ -6,13 +6,17 @@
 @ECHO OFF
 chcp 1252
 ECHO:
+ECHO --------------------------------------------------------------------------------
+ECHO UCBL1 L3P AII SGBDR.
 ECHO Installation de l'environnement PostgreSQL.
+ECHO --------------------------------------------------------------------------------
 ECHO:
 
 SET CHEMIN_INSTALL_POSTGRES=C:\Program Files\PostgreSQL\
 SET VERSION_POSTGRES=17
 SET NOM_SERVICE=postgresql-x64-%VERSION_POSTGRES%
 SET CHEMIN_INSTALL_NPP=C:\Program Files\Notepad++\
+SET CHEMIN_INSTALL_NPP_32=C:\Program Files (x86)\Notepad++\
 SET CHEMIN_INSTALL_GIT=C:\Program Files\Git\
 
 IF NOT EXIST "%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%" (
@@ -37,20 +41,20 @@ IF %errorlevel% NEQ 0 (
 )
 
 ECHO PostgreSQL est installé.
-
+ECHO:
 
 IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
-   ECHO 	Le répertoire %CHEMIN_INSTALL_NPP% n'existe pas.
-   ECHO     Installe Notepad++  et relance le script.
-   ECHO 	https://notepad-plus-plus.org/downloads
-   ECHO		curl https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.7.8/npp.8.7.8.Installer.x64.exe -o  npp.8.7.8.Installer.x64.exe
-   ECHO     Puis relance le script d'installation.
-   PAUSE
-   EXIT
+	ECHO	Ni le répertoire %CHEMIN_INSTALL_NPP% n'existent.
+	ECHO	Installe Notepad++ et relance le script.
+	ECHO	https://notepad-plus-plus.org/downloads
+	ECHO	curl https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.7.8/npp.8.7.8.Installer.x64.exe -o  npp.8.7.8.Installer.x64.exe
+	ECHO	Puis relance le script d'installation.
+	PAUSE
+	EXIT
 )
 
 ECHO Notepad++ est installé.
-
+ECHO:
 
 IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
    ECHO 	Le répertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
@@ -63,21 +67,23 @@ IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
 )
 
 ECHO GIT est installé.
+ECHO:
 
-
-IF EXIST "%HOMEPATH%\Documents\SGBDR_L3PAII" (
-	CD "%HOMEPATH%\Documents\SGBDR_L3PAII"
+IF EXIST "%userprofile%\Documents\SGBDR_L3PAII" (
+	CD /D %userprofile%\Documents\SGBDR_L3PAII"
 	git pull
 ) else (
-	CD "%HOMEPATH%\Documents
+	CD /D %userprofile%\Documents
 	git clone https://github.com/coutaudu/SGBDR_L3PAII.git 
 )
 
 IF %errorlevel% NEQ 0 (
 	ECHO Erreur GIT
+	ECHO:
+	PAUSE
+
 )
-
-
+ECHO:
 
 psql --help  >nul 2>nul
 IF %errorlevel% NEQ 0 (
@@ -87,6 +93,7 @@ IF %errorlevel% NEQ 0 (
 ) ELSE (
 	ECHO Le PATH est à jour.
 )
+ECHO:
 
 
 PAUSE
