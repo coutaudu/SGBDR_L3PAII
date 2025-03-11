@@ -32,4 +32,6 @@ IF %errorlevel% NEQ 0 (
 DEL %fichierLogGit% >nul
 
 ECHO Le répertoire a été synchronisé.
+ECHO: 
+
 PAUSE
