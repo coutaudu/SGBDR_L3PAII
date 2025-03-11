@@ -16,7 +16,7 @@ SET CHEMIN_INSTALL_NPP=C:\Program Files\Notepad++\
 SET CHEMIN_INSTALL_GIT=C:\Program Files\Git\
 
 IF NOT EXIST "%CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES%" (
-   ECHO 	Le rÃ©pertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
+   ECHO 	Le répertoire %CHEMIN_INSTALL_POSTGRES%%VERSION_POSTGRES% n'existe pas.
    ECHO     Installe PostgreSQL
    ECHO 	https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
    ECHO		curl https://get.enterprisedb.com/postgresql/postgresql-17.4-1-windows-x64.exe -o postgresql-17.4-1-windows-x64.exe
@@ -36,11 +36,11 @@ IF %errorlevel% NEQ 0 (
    EXIT
 )
 
-ECHO PostgreSQL est installÃ©.
+ECHO PostgreSQL est installé.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
-   ECHO 	Le rÃ©pertoire %CHEMIN_INSTALL_NPP% n'existe pas.
+   ECHO 	Le répertoire %CHEMIN_INSTALL_NPP% n'existe pas.
    ECHO     Installe Notepad++  et relance le script.
    ECHO 	https://notepad-plus-plus.org/downloads
    ECHO		curl https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.7.8/npp.8.7.8.Installer.x64.exe -o  npp.8.7.8.Installer.x64.exe
@@ -49,11 +49,11 @@ IF NOT EXIST "%CHEMIN_INSTALL_NPP%" (
    EXIT
 )
 
-ECHO Notepad++ est installÃ©.
+ECHO Notepad++ est installé.
 
 
 IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
-   ECHO 	Le rÃ©pertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
+   ECHO 	Le répertoire %CHEMIN_INSTALL_NGIT% n'existe pas.
    ECHO     Installe Git et relance le script.
    ECHO 	https://gitforwindows.org/
    ECHO		curl https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe -o Git-2.48.1-64-bit.exe
@@ -62,7 +62,7 @@ IF NOT EXIST "%CHEMIN_INSTALL_GIT%" (
    EXIT
 )
 
-ECHO GIT est installÃ©.
+ECHO GIT est installé.
 
 
 IF EXIST "%HOMEPATH%\Documents\SGBDR_L3PAII" (
@@ -81,11 +81,11 @@ IF %errorlevel% NEQ 0 (
 
 psql --help  >nul 2>nul
 IF %errorlevel% NEQ 0 (
-	ECHO Ajout des exÃ©cutables PostgreSQL au PATH systÃ¨me.
-	ECHO ATTENTION le poste va ÃŠre redÃ©marrÃ© !
+	ECHO Ajout des exécutables PostgreSQL au PATH système.
+	ECHO ATTENTION le poste va être redémarré !
 	CALL:ajoutePostgresBinSystemPathScript
 ) ELSE (
-	ECHO Le PATH est Ã  jour.
+	ECHO Le PATH est à jour.
 )
 
 
