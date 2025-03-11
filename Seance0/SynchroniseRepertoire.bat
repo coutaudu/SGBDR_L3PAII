@@ -5,6 +5,7 @@
 ::  **********************************************************
 @ECHO OFF
 SET fichierLogGit=git.log
+chcp 1252 >nul
 
 ECHO:
 ECHO Mise à jour du dossier SGBDR_L3PAII.
@@ -30,5 +31,5 @@ IF %errorlevel% NEQ 0 (
 )
 DEL %fichierLogGit% >nul
 
-ECHO Le r‚pertoire a ‚t‚ synchronis‚.
+ECHO Le répertoire a été synchronisé.
 PAUSE
