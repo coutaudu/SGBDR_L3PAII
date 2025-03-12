@@ -1,14 +1,14 @@
 \c postgres
 
-DROP DATABASE IF EXISTS "atelier";
+DROP DATABASE IF EXISTS "fabrique";
 
-CREATE DATABASE "atelier" WITH
+CREATE DATABASE "fabrique" WITH
     OWNER = postgres
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 	
-\c atelier
+\c fabrique
 
 CREATE TABLE services (
 	id			INTEGER PRIMARY KEY,
@@ -28,12 +28,12 @@ CREATE TABLE employes (
 	salaire			INTEGER,
     adresse			TEXT,
 	email			TEXT,
-    service_id			INTEGER,
+    service_id			INTEGER
 );
 
 CREATE TABLE chefs (
 	service_id			INTEGER PRIMARY KEY,
-	employe_id			INTEGER,
+	employe_id			INTEGER
 	);
 
 
