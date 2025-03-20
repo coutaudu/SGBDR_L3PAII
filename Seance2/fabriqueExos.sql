@@ -54,6 +54,20 @@
 -- [11] Modifier: Clause UPDATE
 -- Augmenter le salaire des employes de "Astreinte" de 30%
 -- L'employé Tom change de service et passe à l'après midi 
+SELECT * from employes;
+-- where service_id = ( SELECT id FROM services WHERE nom = 'Maintenance');
+
+UPDATE 
+	employes 
+SET 
+	salaire = salaire*1.3
+WHERE 
+	service_id IN ( SELECT id FROM services WHERE nom LIKE '%o%')
+;
+
+
+SELECT * from employes;
+-- where service_id = ( SELECT id FROM services WHERE nom = 'Maintenance');
 
 -- [12] Supprimer: Clause DELETE FROM 
 -- Supprimer le service de production après-midi.

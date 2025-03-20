@@ -22,6 +22,7 @@ CREATE TABLE employes (
 	CONSTRAINT service_existant FOREIGN KEY (service) REFERENCES horaires(service) DEFERRABLE,
 	CONSTRAINT cle_primaire_employes PRIMARY KEY (prenom),
 	CONSTRAINT email_format CHECK (email LIKE '%@%'),
+	CONSTRAINT salaire_minimum CHECK (salaire > 100),
 	CONSTRAINT email_unique UNIQUE (email)
 );
 
