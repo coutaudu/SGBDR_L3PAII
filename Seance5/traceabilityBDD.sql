@@ -17,6 +17,6 @@ CREATE TABLE ProductionMonitoring (
 	
 -- TO BE DONE: CREATE Tables ProductInfos et FaultCodes
 
-\COPY ProductionMonitoring(PartId, ProductTypeId, PartState, DefaultCode, InsertBatch, PlasticBatch, MoldId, MoldingTemp, Diameter) FROM './ProductionMonitoring.csv' WITH CSV HEADER DELIMITER ';' NULL AS 'NULL';
+\COPY ProductionMonitoring(PartId, ProductTypeId, PartState, DefaultCode, InsertBatch, PlasticBatch, MoldId, MoldingTemp, Diameter) FROM './ProductionMonitoring.csv' WITH CSV HEADER DELIMITER '	' NULL AS 'NULL';
 
 -- TO BE DONE: IMPORT Tables ProductInfos et FaultCodes
