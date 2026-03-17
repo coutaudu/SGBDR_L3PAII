@@ -26,19 +26,13 @@
 -- [6] Requêtes sur plusieurs tables: Clause INNER JOIN
 -- Afficher la jonction complète des tables employes et horaires.
 -- Afficher les horaires de John.
-SELECT prenom, debut, fin FROM employes INNER JOIN horaires ON employes.service = horaires.service WHERE prenom ='John';
-SELECT prenom,debut,fin from employes INNER JOIN horaires ON employes.service = horaires.service WHERE employes.service = 'Production';
 -- Afficher les noms et horaires de tous les employés du service production.
 
 
 -- [7] Requêtes sur plusieurs tables: Clause LEFT JOIN
 -- Afficher la jonction de toutes les informations de la BDD
-SELECT * FROM employes INNER JOIN horaires ON employes.service=horaires.service ;
-SELECT * FROM employes LEFT JOIN horaires ON employes.service=horaires.service ;
-SELECT * FROM employes RIGHT JOIN horaires ON employes.service=horaires.service ;
-
 -- Afficher les prénoms des employés qui n'ont pas d'horaires.
- SELECT * FROM Employes Left join Horaires on Employes.Service=Horaires.service where debut is null;
+
  
 -- [8] Les expressions
 -- Les salaires de la base sont journaliers. Afficher les prénoms et salaires mensuels (20 jours travaillés).
