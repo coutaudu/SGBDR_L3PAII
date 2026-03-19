@@ -1,8 +1,8 @@
 \c postgres
 
-DROP DATABASE IF EXISTS "atelier";
+DROP DATABASE IF EXISTS "fabrique";
 
-CREATE DATABASE "atelier" WITH
+CREATE DATABASE "fabrique" WITH 	
     OWNER = postgres
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1
