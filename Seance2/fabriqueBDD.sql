@@ -8,7 +8,7 @@ CREATE DATABASE "fabrique" WITH
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 	
-\c atelier
+\c fabrique
 
 CREATE TABLE services (
 	id			INTEGER PRIMARY KEY,
