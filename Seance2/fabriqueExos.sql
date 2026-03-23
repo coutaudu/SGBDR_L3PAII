@@ -12,6 +12,8 @@
 
 -- [3] Modifier: Clause UPDATE
 -- Augmenter le salaire des employes de "Astreinte" de 30%
+
+
 -- L'employé Tom change de service et passe à l'après midi 
 
 -- [4] Supprimer: Clause DELETE FROM 
